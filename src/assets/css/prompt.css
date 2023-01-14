@@ -1,0 +1,88 @@
+:root {
+    --promptblue: rgb(46, 147, 255);
+    --promptred: rgb(254, 78, 42);
+    --promptnotwhite: rgb(235, 235, 235);
+}
+
+@keyframes fade {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.promt-container {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    top: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    height: 100vh;
+    width: 100vw;
+
+    animation: fade .75s ease-in-out;
+}
+
+.prompt {
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    height: fit-content;
+    width: 65%;
+    border-radius: 8px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+}
+
+.prompt input[type=text] {
+    margin: 8px 0 16px 0;
+    padding: 4px 8px;
+
+    background-color: var(--promptnotwhite);
+
+    border-radius: 6px;
+    border: solid var(--promptblue);
+    border-width: 0 0 3px 0;
+    outline: none;
+}
+
+.prompt label {
+    font-weight: 600;
+    color: var(--promptblue);
+    font-size: .9em;
+}
+
+.prompt button {
+    padding: 4px 12px;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.prompt button[danger] {
+    background-color: var(--promptnotwhite);
+    color: var(--promptred);
+}
+
+.prompt button[target] {
+    background-color: var(--promptblue);
+    color: white;
+}

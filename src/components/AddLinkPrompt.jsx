@@ -1,8 +1,10 @@
 const AddLinkPrompt = () => {
   return (
-    <div>
-      <input type="text" placeholder="Url / Search" />
-      <input type="submit" />
+    <div className="promt-container">
+        <div className="prompt">
+            <input type="text" placeholder="Url" />
+            <input type="submit" />
+        </div>
     </div>
   )
 }
