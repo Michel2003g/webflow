@@ -35,3 +35,11 @@
 .searchbar:focus {
   border: none;
 }
+
+.create-button {
+  position: absolute;
+  bottom: 25px;
+  top: auto;
+  left: auto;
+  right: 25px;
+}

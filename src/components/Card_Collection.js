@@ -1,14 +1,12 @@
 import Card from "./Card";
 
-const Card_Collection = () => {
+const Card_Collection = ({data}) => {
   return (
     <div className='card-container'>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {console.log(data)}
+      {data.map( card_data => {
+        return <Card />
+      })}
     </div>
   )
 }
