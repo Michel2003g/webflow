@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 
 import './assets/css/style.css';
 import './assets/css/prompt.css';
+import './assets/css/infoCard.css';
 import './assets/css/index.css';
 
 

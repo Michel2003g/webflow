@@ -1,6 +1,7 @@
 import Card from "./Card";
 
 const Card_Collection = ({data}) => {
+
   return (
     <div className='card-container'>
       {console.log(data)}
