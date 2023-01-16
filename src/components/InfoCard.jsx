@@ -1,6 +1,6 @@
 const InfoCard = (props) => {
   return (props.trigger) ? (
-    <div className="info-card">
+    <div className={"info-card " + props.cardStyle}>
         {props.children}
     </div>
   ) : ""

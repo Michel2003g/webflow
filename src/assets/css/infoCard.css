@@ -41,6 +41,16 @@
     animation: show .25s ease-in-out;
 }
 
+.info-card.success {
+    background-color: rgb(38, 255, 125);
+    color: white;
+}
+
+.info-card.denied {
+    background-color: rgb(255, 89, 38);
+    color: white;
+}
+
 .info-card * {
     margin: 0;
 }

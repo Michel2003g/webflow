@@ -6,7 +6,7 @@ const Card_Collection = ({data}) => {
     <div className='card-container'>
       {console.log(data)}
       {data.map( card_data => {
-        return <Card />
+        return <Card data={card_data}/>
       })}
     </div>
   )

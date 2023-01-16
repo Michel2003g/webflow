@@ -1,0 +1,10 @@
+.card {
+    aspect-ratio: 1;
+    background-color: rgba(0, 0, 0, 0.393);
+    border-radius: 16px;
+}
+
+.card .title {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+}

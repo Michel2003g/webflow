@@ -10,6 +10,7 @@ const Home = () => {
 
   // info
   const [info, setInfo] = useState(false);
+  const [infoType, setInfoType] = useState("");
 
   // handle items
   const [items, setItems] = useState(JSON.parse(localStorage.getItem("items")) || []);
@@ -18,11 +19,13 @@ const Home = () => {
     localStorage.setItem("items", JSON.stringify(items))
   }, [items])
 
-  function addItem(name) {
+  function addItem() {
     setItems([...items,
       {
         name: name,
-        links: []
+        links: [
+          link
+        ]
       }
     ]);
   }
@@ -30,19 +33,32 @@ const Home = () => {
   // add sequance prompt
 
   const [name, nameUpdate] = useState("");
+  const [link, linkUpdate] = useState("");
   const [sequancePrompt, setSequancePrompt] = useState(false);
 
   function handleName(event) {
-    nameUpdate(event.target.value)
+    nameUpdate(event.target.value);
   }
 
   function add(name) {
-    addItem(name);
+    if (name === "" || name == undefined) {
+      setInfoType("denied")
+      setInfo(<p>Name can not be empty !</p>);
+      setSequancePrompt(false);
+      return
+    }
+
+    if (link === "" || link == undefined) {
+      setInfoType("denied")
+      setInfo(<p>Link can not be empty !</p>);
+      setSequancePrompt(false);
+      return
+    }
+
+    addItem();
     setSequancePrompt(false);
-    setInfo(false);
-    setTimeout(
-      setInfo(<p>Item Added</p>)
-    , 50)
+    setInfoType("success");
+    setInfo(<p>{name}, Added !</p>);
   }
 
   function cancel() {
@@ -57,14 +73,16 @@ const Home = () => {
       </div>
       <Popup trigger={sequancePrompt}>
         <label htmlFor="sequance-name">Name:</label>
-        <input type="text" id="sequance-name" onChange={handleName} value={name}/>
+        <input type="text" id="sequance-name" onChange={(event) => nameUpdate(event.target.value)} value={name}/>
+        <label htmlFor="sequance-name">Link:</label>
+        <input type="text" id="sequance-name" onChange={(event) => linkUpdate(event.target.value)} value={link}/>
         <div className="row">
           <button danger="" onClick={cancel}>Cancel</button>
           <button target="" onClick={e => add(name)}>Add</button>
         </div>
       </Popup>
       
-      <InfoCard trigger={info}>
+      <InfoCard trigger={info} cardStyle={infoType}>
         <p>{info}</p>
       </InfoCard>
       <button className="create-button button" onClick={() => setSequancePrompt(true)}>Create</button>

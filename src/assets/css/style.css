@@ -101,12 +101,6 @@ code {
     gap: 16px;
 }
 
-.card {
-    aspect-ratio: 1;
-    background-color: rgba(0, 0, 0, 0.393);
-    border-radius: 16px;
-}
-
 button {
     padding: 4px 12px;
     border: none;
